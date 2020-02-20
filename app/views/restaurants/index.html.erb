@@ -1,11 +1,14 @@
 <div class="container">
   <h1>All Restaurants</h1>
 
-  <ul>
+  <div class="flex-container">
     <% @restaurants.each do |restaurant| %>
-      <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+      <div class="flex-item">
+        <img src="https://source.unsplash.com/random/200x200/" alt="">
+        <%= link_to restaurant.name, restaurant_path(restaurant), class: 'flex-text' %>
+      </div>
     <% end %>
-  </ul>
+  </div>
 
   <%= link_to 'Add a new restaurant', new_restaurant_path %>
 </div>
